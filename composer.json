@@ -1,0 +1,44 @@
+{
+  "name": "ytake/hh-valueobject",
+  "description": "A Hack library/collection of classes aimed to help developers using and undestanding immutable objects.(temporary package)",
+  "minimum-stability": "stable",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "hack",
+    "hhvm",
+    "vo",
+    "value object",
+    "architecture",
+    "domain driven design"
+  ],
+  "authors": [
+    {
+      "name": "Yuuki Takezawa",
+      "email": "yuuki.takezawa@comnect.jp.net"
+    }
+  ],
+  "require": {
+    "hhvm": ">=3.27.0",
+    "hhvm/hhvm-autoload": "^1.6",
+    "hhvm/hsl": ">=3.27.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.0",
+    "91carriage/phpunit-hhi": "^5.7.1",
+    "hhvm/hhast": ">=3.27.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ytake\\HHValueObjects\\": "src/"
+    }
+  },
+  "autoload-dev": {
+  "classmap": [
+      "tests/"
+    ]
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit"
+  }
+}

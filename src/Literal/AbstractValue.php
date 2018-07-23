@@ -19,7 +19,7 @@ namespace Ytake\HHValueObjects\Literal;
 use type Ytake\HHValueObjects\ValueObjectInterface;
 
 <<__ConsistentConstruct>>
-abstract class AbstractValue<+T> implements ValueObjectInterface<T> {
+abstract class AbstractValue<T> implements ValueObjectInterface<T> {
 
   public function __construct(
     protected T $value

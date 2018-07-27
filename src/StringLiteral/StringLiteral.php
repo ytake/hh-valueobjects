@@ -17,10 +17,10 @@
 namespace Ytake\HHValueObjects\StringLiteral;
 
 use type Ytake\HHValueObjects\Literal\AbstractValue;
-use type Ytake\HHValueObjects\ValueObjectInterface;
 
 class StringLiteral extends AbstractValue<string> {
 
+  <<__Override>>
   public function __toString(): string {
     return $this->value;
   }

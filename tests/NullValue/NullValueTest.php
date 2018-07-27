@@ -1,11 +1,11 @@
 <?hh // strict
 
 use type PHPUnit\Framework\TestCase;
-use Ytake\HHValueObjects\NullValue\NullValue;
+use type Ytake\HHValueObjects\NullValue\NullValue;
 use function strval;
 
 final class NullValueTest extends TestCase {
-  
+
   public function testShouldReturnSameValue(): void {
     $null1 = new NullValue();
     $null2 = new NullValue();

@@ -14,18 +14,19 @@
  * Copyright (c) 2018 Yuuki Takezawa
  */
 
-namespace Ytake\HHValueObjects\NullValue;
+namespace Ytake\HHValueObjects\Money;
 
+use type Ytake\HHValueObjects\Money\Currency as BaseCurrency;
 use type Ytake\HHValueObjects\Literal\AbstractValue;
 
-class NullValue extends AbstractValue<mixed> {
-
-  public function __construct(protected mixed $value = null) {
-    parent::__construct(null);
-  }
+class Currency extends AbstractValue<CurrencyCode> {
 
   <<__Override>>
   public function __toString(): string {
-    return \strval(null);
+    return $this->getCode();
+  }
+
+  public function getCode(): CurrencyCode {
+    return $this->value;
   }
 }

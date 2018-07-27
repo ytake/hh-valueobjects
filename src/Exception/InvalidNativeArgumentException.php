@@ -14,18 +14,15 @@
  * Copyright (c) 2018 Yuuki Takezawa
  */
 
-namespace Ytake\HHValueObjects\NullValue;
+namespace Ytake\HHValueObjects\Exception;
 
-use type Ytake\HHValueObjects\Literal\AbstractValue;
+use type InvalidArgumentException;
 
-class NullValue extends AbstractValue<mixed> {
+final class InvalidNativeArgumentException extends InvalidArgumentException {
 
-  public function __construct(protected mixed $value = null) {
-    parent::__construct(null);
-  }
-
-  <<__Override>>
-  public function __toString(): string {
-    return \strval(null);
+  public function __construct(string $message) {
+    parent::__construct(
+      \sprintf('Argument "%s" is invalid.', $message)
+    );
   }
 }

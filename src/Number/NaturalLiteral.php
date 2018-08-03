@@ -4,7 +4,7 @@ namespace Ytake\HHValueObjects\Number;
 
 use type Ytake\HHValueObjects\Exception\InvalidNativeArgumentException;
 use const FILTER_VALIDATE_INT;
-use function filter_var; 
+use function filter_var;
 
 class NaturalLiteral extends IntegerLiteral {
 

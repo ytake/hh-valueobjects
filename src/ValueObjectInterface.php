@@ -16,7 +16,7 @@
 
 namespace Ytake\HHValueObjects;
 
-interface ValueObjectInterface<T> extends NativeInterface<T> {
+interface ValueObjectInterface extends NativeInterface {
   /**
    * Returns a string representation of the object.
    */
@@ -25,5 +25,5 @@ interface ValueObjectInterface<T> extends NativeInterface<T> {
   /**
    * Compare two ValueObjectInterface and tells whether they can be considered equal.
    */
-  public function sameValueAs(this $object): bool;
+  public function sameValueAs(ValueObjectInterface $object): bool;
 }

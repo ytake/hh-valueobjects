@@ -19,7 +19,7 @@ namespace Ytake\HHValueObjects\Literal;
 use type Ytake\HHValueObjects\ValueObjectInterface;
 
 <<__ConsistentConstruct>>
-abstract class AbstractValue<T> implements ValueObjectInterface<T> {
+abstract class AbstractValue<T> implements ValueObjectInterface {
 
   public function __construct(
     protected T $value
@@ -29,7 +29,7 @@ abstract class AbstractValue<T> implements ValueObjectInterface<T> {
     return $this->value;
   }
 
-  public function sameValueAs(this $t): bool {
+  public function sameValueAs(ValueObjectInterface $t): bool {
     return $this->toNative() === $t->toNative();
   }
 }

@@ -26,6 +26,6 @@ class NullValue extends AbstractValue<mixed> {
 
   <<__Override>>
   public function __toString(): string {
-    return \strval(null);
+    return '';
   }
 }

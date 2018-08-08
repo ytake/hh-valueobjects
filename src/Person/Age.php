@@ -14,19 +14,10 @@
  * Copyright (c) 2018 Yuuki Takezawa
  */
 
-namespace Ytake\HHValueObjects\StringLiteral;
+namespace Ytake\HHValueObjects\Person;
 
-use type Ytake\HHValueObjects\Literal\AbstractValue;
-use function strlen;
+use type Ytake\HHValueObjects\Number\NaturalLiteral;
 
-class StringLiteral extends AbstractValue<string> {
+class Age extends NaturalLiteral {
 
-  <<__Override>>
-  public function __toString(): string {
-    return $this->value;
-  }
-
-  public function isEmpty(): bool {
-    return 0 === strlen($this->toNative());
-  }
 }

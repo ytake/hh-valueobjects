@@ -16,7 +16,6 @@
 
 namespace Ytake\HHValueObjects\Money;
 
-use type Ytake\HHValueObjects\Money\Currency as BaseCurrency;
 use type Ytake\HHValueObjects\Literal\AbstractValue;
 
 class Currency extends AbstractValue<CurrencyCode> {

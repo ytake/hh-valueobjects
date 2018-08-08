@@ -29,7 +29,6 @@ class FloatLiteralTest extends TestCase {
     $real          = new FloatLiteral(3.14);
     $nativeInteger = new IntegerLiteral(3);
     $integer       = $real->toInteger();
-
     $this->assertTrue($integer->sameValueAs($nativeInteger));
   }
 

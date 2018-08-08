@@ -17,7 +17,7 @@ abstract class AbstractNumber<T> extends AbstractValue<T> {
     ?RoundingMode $roundingMode = null
   ): NaturalLiteral {
     $integer = $this->toInteger($roundingMode)->toNative();
-    return new NaturalLiteral(abs($integer));
+    return new NaturalLiteral((int)abs($integer));
   }
 
   public function toInteger(
@@ -27,7 +27,7 @@ abstract class AbstractNumber<T> extends AbstractValue<T> {
       $roundingMode = RoundingMode::HALF_UP;
     }
     return new IntegerLiteral(
-      round($this->toNative(), 0, $roundingMode)
+      (int) round($this->toNative(), 0, $roundingMode)
     );
   }
 }

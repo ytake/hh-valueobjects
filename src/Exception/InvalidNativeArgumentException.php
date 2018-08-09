@@ -17,12 +17,13 @@
 namespace Ytake\HHValueObjects\Exception;
 
 use type InvalidArgumentException;
+use function sprintf;
 
 final class InvalidNativeArgumentException extends InvalidArgumentException {
 
   public function __construct(string $message) {
     parent::__construct(
-      \sprintf('Argument "%s" is invalid.', $message)
+      sprintf('Argument "%s" is invalid.', $message)
     );
   }
 }

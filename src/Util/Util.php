@@ -14,19 +14,23 @@
  * Copyright (c) 2018 Yuuki Takezawa
  */
 
-namespace Ytake\HHValueObjects\StringLiteral;
+namespace Ytake\HHValueObjects\Util;
 
-use type Ytake\HHValueObjects\Literal\AbstractValue;
-use function strlen;
+use type Ytake\HHValueObjects\ValueObjectInterface;
+use function get_class;
 
-class StringLiteral extends AbstractValue<string> {
+final class Util {
 
-  <<__Override>>
-  public function __toString(): string {
-    return $this->value;
+  public static function classEquals(
+    ValueObjectInterface $objectA,
+    ValueObjectInterface $objectB
+   ): bool {
+    return get_class($objectA) === get_class($objectB);
   }
 
-  public function isEmpty(): bool {
-    return 0 === strlen($this->toNative());
+  public static function getClassAsString<T>(
+    ValueObjectInterface  $object
+  ): string {
+    return get_class($object);
   }
 }

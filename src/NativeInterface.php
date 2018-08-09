@@ -16,9 +16,9 @@
 
 namespace Ytake\HHValueObjects;
 
-interface NativeInterface<T> {
+interface NativeInterface {
   /**
    * Returns the value.
    */
-  public function toNative(): T;
+  public function toNative<T>(): T;
 }

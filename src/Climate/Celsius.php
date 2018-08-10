@@ -14,23 +14,19 @@
  * Copyright (c) 2018 Yuuki Takezawa
  */
 
-namespace Ytake\HHValueObjects\Util;
+namespace Ytake\HHValueObjects\Climate;
 
-use type Ytake\HHValueObjects\ValueObjectInterface;
-use function get_class;
+class Celsius extends Temperature {
 
-final class Util {
-
-  public static function classEquals(
-    ValueObjectInterface $objectA,
-    ValueObjectInterface $objectB
-   ): bool {
-    return get_class($objectA) === get_class($objectB);
+  public function toCelsius(): Celsius {
+    return new static($this->value);
   }
 
-  public static function getClassAsString(
-    ValueObjectInterface  $object
-  ): string {
-    return get_class($object);
+  public function toKelvin(): Kelvin {
+    return new Kelvin($this->value + 273.15);
+  }
+
+  public function toFahrenheit(): Fahrenheit {
+    return new Fahrenheit($this->value * 1.8 + 32);
   }
 }

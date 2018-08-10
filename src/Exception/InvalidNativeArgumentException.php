@@ -18,12 +18,17 @@ namespace Ytake\HHValueObjects\Exception;
 
 use type InvalidArgumentException;
 use function sprintf;
+use function implode;
 
 final class InvalidNativeArgumentException extends InvalidArgumentException {
 
-  public function __construct(string $message) {
+  public function __construct(string $message, Vector<string> $allowedTypes = Vector{}) {
     parent::__construct(
-      sprintf('Argument "%s" is invalid.', $message)
+      sprintf(
+        'Argument "%s" is invalid. Allowed types for argument are "%s".',
+        $message,
+        implode(',', $allowedTypes->toArray())
+      )
     );
   }
 }

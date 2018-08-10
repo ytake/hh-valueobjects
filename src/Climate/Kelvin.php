@@ -10,27 +10,22 @@
  * THE SOFTWARE.
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
- *
  * Copyright (c) 2018 Yuuki Takezawa
  */
 
-namespace Ytake\HHValueObjects\Util;
+namespace Ytake\HHValueObjects\Climate;
 
-use type Ytake\HHValueObjects\ValueObjectInterface;
-use function get_class;
+class Kelvin extends Temperature {
 
-final class Util {
-
-  public static function classEquals(
-    ValueObjectInterface $objectA,
-    ValueObjectInterface $objectB
-   ): bool {
-    return get_class($objectA) === get_class($objectB);
+  public function toCelsius(): Celsius {
+    return new Celsius($this->value - 273.15);
   }
 
-  public static function getClassAsString(
-    ValueObjectInterface  $object
-  ): string {
-    return get_class($object);
+  public function toKelvin(): Kelvin {
+    return new static($this->value);
+  }
+
+  public function toFahrenheit(): Fahrenheit {
+    return new Fahrenheit($this->toCelsius()->toNative() * 1.8 + 32);
   }
 }

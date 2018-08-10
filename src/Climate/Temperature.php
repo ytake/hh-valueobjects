@@ -14,23 +14,15 @@
  * Copyright (c) 2018 Yuuki Takezawa
  */
 
-namespace Ytake\HHValueObjects\Util;
+namespace Ytake\HHValueObjects\Climate;
 
-use type Ytake\HHValueObjects\ValueObjectInterface;
-use function get_class;
+use type Ytake\HHValueObjects\Number\FloatLiteral;
 
-final class Util {
+abstract class Temperature extends FloatLiteral {
 
-  public static function classEquals(
-    ValueObjectInterface $objectA,
-    ValueObjectInterface $objectB
-   ): bool {
-    return get_class($objectA) === get_class($objectB);
-  }
+  abstract public function toCelsius(): Celsius;
 
-  public static function getClassAsString(
-    ValueObjectInterface  $object
-  ): string {
-    return get_class($object);
-  }
+  abstract public function toKelvin(): Kelvin;
+
+  abstract public function toFahrenheit(): Fahrenheit;
 }

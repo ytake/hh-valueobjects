@@ -1,6 +1,6 @@
 # HHValueObjects
 
-Supported Only HHVM/Hack 
+Supported Only HHVM/Hack
 
 [![Build Status](https://travis-ci.org/ytake/hh-valueobjects.svg?branch=master)](https://travis-ci.org/ytake/hh-valueobjects)
 
@@ -8,8 +8,12 @@ Supported Only HHVM/Hack
 
 A Hack library/collection of classes aimed to help developers using and undestanding immutable objects.
 
-## install 
+## Requirements
+
+*HHVM 4.8 or higher*
+
+## install
 
 ```bash
-$ hhvm $(which composer) require ytake/hh-valueobjects
+$ composer require ytake/hh-valueobjects
 ```

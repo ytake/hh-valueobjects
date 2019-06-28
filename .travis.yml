@@ -1,13 +1,15 @@
-language: php
 sudo: required
-dist: trusty
-php:
- - hhvm-3.27
- - hhvm
- - hhvm-nightly
-
-install: composer install
-
+language: generic
+services:
+  - docker
+env:
+  matrix:
+  - HHVM_VERSION=4.8.0
+  - HHVM_VERSION=4.9.0
+  - HHVM_VERSION=4.10.0
+  - HHVM_VERSION=4.11.0
+  - HHVM_VERSION=latest
+install:
+  - docker pull hhvm/hhvm:$HHVM_VERSION
 script:
- - hh_client
- - hhvm vendor/bin/phpunit
+  - docker run --rm -w /var/source -v $(pwd):/var/source hhvm/hhvm:$HHVM_VERSION ./.travis.sh

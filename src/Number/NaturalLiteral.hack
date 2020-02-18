@@ -23,8 +23,8 @@ class NaturalLiteral extends IntegerLiteral {
   public function __construct(
     int $value
   ) {
-    $value = filter_var($value, FILTER_VALIDATE_INT, [
-      'options' => [
+    $value = filter_var($value, FILTER_VALIDATE_INT, dict[
+      'options' => dict[
         'min_range' => 0
       ]
     ]);

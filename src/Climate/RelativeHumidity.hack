@@ -28,11 +28,11 @@ class RelativeHumidity extends NaturalLiteral {
   public function __construct(
     int $value
   ) {
-    $value = filter_var($value, FILTER_VALIDATE_INT, [
-      'options' => [
+    $value = filter_var($value, FILTER_VALIDATE_INT, dict[
+      'options' => dict[
         'min_range' => self::MIN,
         'max_range' => self::MAX
-      ]
+      ]  
     ]);
     if (false === $value) {
       throw new InvalidNativeArgumentException(

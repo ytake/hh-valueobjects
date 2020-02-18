@@ -10,10 +10,10 @@ A Hack library/collection of classes aimed to help developers using and undestan
 
 ## Requirements
 
-*HHVM 4.8 or higher*
+*HHVM 4.35 or higher*
 
 ## install
 
 ```bash
-$ composer require ytake/hh-valueobjects
+composer require ytake/hh-valueobjects
 ```

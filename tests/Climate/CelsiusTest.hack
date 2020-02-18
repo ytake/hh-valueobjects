@@ -4,8 +4,10 @@ use type Ytake\HHValueObjects\Climate\Celsius;
 
 final class CelsiusTest extends HackTest {
 
-  public function temperatureProvider(): array<array<Celsius>> {
-    return [[new Celsius(10.0)]];
+  public function temperatureProvider(): vec<vec<Celsius>> {
+    return vec[
+      vec[new Celsius(10.0)]
+    ];
   }
 
   <<DataProvider('temperatureProvider')>>
